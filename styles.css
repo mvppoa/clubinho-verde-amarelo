@@ -3,14 +3,14 @@
    ========================================== */
 
 :root {
-  --verde: #009739;
-  --verde-dark: #006B2B;
-  --verde-light: #E8F5E9;
-  --amarelo: #FEDD00;
-  --amarelo-dark: #E5C700;
-  --amarelo-light: #FFFDE7;
-  --azul: #002776;
-  --azul-light: #E3F2FD;
+  --verde: #3DBE4A;
+  --verde-dark: #2A9E36;
+  --verde-light: #E8F8EA;
+  --amarelo: #F9C713;
+  --amarelo-dark: #E0B000;
+  --amarelo-light: #FFFBEA;
+  --azul: #1565C0;
+  --azul-light: #E3EEFF;
   --branco: #ffffff;
   --cinza-50: #f8f9fa;
   --cinza-100: #f1f3f5;
@@ -102,18 +102,15 @@ img {
 }
 
 .nav-logo {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
-.logo-verde {
-  color: var(--verde);
-}
-
-.logo-amarelo {
-  color: var(--amarelo-dark);
+.nav-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-menu {
@@ -165,7 +162,7 @@ img {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--verde) 0%, #00B347 40%, #00C853 100%);
+  background: linear-gradient(135deg, #1565C0 0%, #1976D2 40%, #1E88E5 100%);
   overflow: hidden;
   padding-top: 72px;
 }
