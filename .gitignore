@@ -1,0 +1,13 @@
+# Dependências da ferramenta de edição local (não versionar)
+admin-tool/node_modules/
+node_modules/
+
+# Cópia local de comparação gerada em tempo de execução
+admin-tool/.preview-before/
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
