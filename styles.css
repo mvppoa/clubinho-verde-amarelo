@@ -611,6 +611,18 @@ img {
   font-size: 0.9rem;
 }
 
+.equipe-comite-lista {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--verde);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* ==========================================
    English Section
    ========================================== */

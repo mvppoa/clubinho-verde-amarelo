@@ -4,6 +4,7 @@ node_modules/
 
 # Cópia local de comparação gerada em tempo de execução
 admin-tool/.preview-before/
+admin-tool/
 
 # Logs
 *.log
