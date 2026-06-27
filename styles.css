@@ -497,7 +497,7 @@ img {
 }
 
 .turma-canarinho { border-top-color: #FFD600; }
-.turma-mico { border-top-color: #FF9800; }
+.turma-mico { border-top-color: var(--azul); }
 .turma-tatu { border-top-color: var(--verde); }
 .turma-onca { border-top-color: #795548; }
 .turma-jacare { border-top-color: var(--azul); }
