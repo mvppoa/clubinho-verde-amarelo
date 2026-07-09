@@ -51,43 +51,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // Teacher info balloon toggle
+  // Teacher info modal
   const equipeNomes = document.querySelectorAll('.equipe-nome');
+  const modal = document.getElementById('equipeModal');
 
-  const closeAllBaloes = () => {
-    equipeNomes.forEach(nome => {
-      nome.closest('.equipe-card').classList.remove('open');
-      nome.setAttribute('aria-expanded', 'false');
-    });
-  };
+  if (modal) {
+    const modalTitle = modal.querySelector('.equipe-modal-title');
+    const modalRole = modal.querySelector('.equipe-modal-role');
+    const modalBody = modal.querySelector('.equipe-modal-body');
 
-  equipeNomes.forEach(nome => {
-    const toggle = (e) => {
-      e.stopPropagation();
+    const openModal = (nome) => {
       const card = nome.closest('.equipe-card');
-      const isOpen = card.classList.contains('open');
-      closeAllBaloes();
-      if (!isOpen) {
-        card.classList.add('open');
-        nome.setAttribute('aria-expanded', 'true');
-      }
+      const role = card.querySelector('.equipe-role');
+      const balao = card.querySelector('.equipe-balao');
+
+      modalTitle.textContent = nome.textContent;
+      modalRole.textContent = role ? role.textContent : '';
+      modalBody.innerHTML = balao ? balao.innerHTML : '';
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     };
 
-    nome.addEventListener('click', toggle);
-    nome.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle(e);
+    const closeModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    equipeNomes.forEach(nome => {
+      nome.addEventListener('click', () => openModal(nome));
+      nome.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(nome);
+        }
+      });
+    });
+
+    modal.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
       }
     });
-  });
-
-  // Close balloons when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.equipe-card')) {
-      closeAllBaloes();
-    }
-  });
+  }
 
   // Active nav link highlight
   const sections = document.querySelectorAll('section[id]');
