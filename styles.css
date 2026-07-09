@@ -423,6 +423,20 @@ img {
   margin-bottom: 20px;
 }
 
+.about-flag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  line-height: 0;
+}
+
+.about-flag svg {
+  width: 52px;
+  height: 34px;
+  border-radius: 4px;
+}
+
 .about-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
