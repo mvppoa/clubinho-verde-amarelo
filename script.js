@@ -51,6 +51,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
+  // Teacher info balloon toggle
+  const equipeNomes = document.querySelectorAll('.equipe-nome');
+
+  const closeAllBaloes = () => {
+    equipeNomes.forEach(nome => {
+      nome.closest('.equipe-card').classList.remove('open');
+      nome.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  equipeNomes.forEach(nome => {
+    const toggle = (e) => {
+      e.stopPropagation();
+      const card = nome.closest('.equipe-card');
+      const isOpen = card.classList.contains('open');
+      closeAllBaloes();
+      if (!isOpen) {
+        card.classList.add('open');
+        nome.setAttribute('aria-expanded', 'true');
+      }
+    };
+
+    nome.addEventListener('click', toggle);
+    nome.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle(e);
+      }
+    });
+  });
+
+  // Close balloons when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.equipe-card')) {
+      closeAllBaloes();
+    }
+  });
+
   // Active nav link highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-menu a');

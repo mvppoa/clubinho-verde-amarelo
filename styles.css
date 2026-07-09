@@ -602,9 +602,73 @@ img {
   margin-bottom: 16px;
 }
 
+.equipe-avatar-img {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--verde);
+}
+
 .equipe-card h4 {
   font-size: 1.1rem;
   margin-bottom: 4px;
+}
+
+.equipe-nome {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition);
+}
+
+.equipe-nome:hover {
+  color: var(--verde);
+}
+
+.equipe-nome::after {
+  content: 'ⓘ';
+  font-size: 0.85rem;
+  color: var(--verde);
+}
+
+.equipe-balao {
+  display: none;
+  position: relative;
+  margin: 14px auto 0;
+  max-width: 260px;
+  padding: 14px 16px;
+  background: var(--branco);
+  border: 1px solid var(--cinza-200);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--cinza-700);
+}
+
+.equipe-balao::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--branco);
+  border-top: 1px solid var(--cinza-200);
+  border-left: 1px solid var(--cinza-200);
+}
+
+.equipe-balao p + p {
+  margin-top: 10px;
+}
+
+.equipe-card.open .equipe-balao {
+  display: block;
 }
 
 .equipe-role {
