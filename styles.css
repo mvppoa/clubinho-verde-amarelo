@@ -851,6 +851,13 @@ img {
   font-size: 0.9rem;
 }
 
+.equipe-card-comite {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 260px;
+}
+
 .equipe-comite-lista {
   list-style: none;
   margin: 12px 0 0;
