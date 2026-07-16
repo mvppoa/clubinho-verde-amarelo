@@ -112,6 +112,7 @@ img {
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
+  transform: translate(-4px, 8px);
 }
 
 .nav-menu {
