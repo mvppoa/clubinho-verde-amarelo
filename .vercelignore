@@ -1,2 +1,8 @@
 # A ferramenta de edição é só para uso local — não deve ir para o site publicado.
 admin-tool/
+
+# Arquivos de origem / pesados que não precisam ir para o site publicado
+Professoras/
+Professoras.zip
+Logo Clubinho.ai.png
+*.bat
